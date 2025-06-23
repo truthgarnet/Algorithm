@@ -21,12 +21,14 @@ public class Main {
             } else if (s[i].equals("L")) {
                 turn--;
                 cnt++;
-                dir = (dir - turn) % 4;
+                if (!inRange(x, y)) 
+                    dir = 3 - dir;
+
             } else if (s[i].equals("F")) { // move
                 x = x + dx[dir];
                 y = y + dy[dir];
                 cnt++;
-                if (x == 0 && y == 0) {
+                if (!inRange(x, y) && x == 0 && y == 0) {
                     flag = true;
                     break;
                 }
@@ -34,6 +36,10 @@ public class Main {
         }
         int result = flag ? cnt : -1;
         System.out.print(result);
+    }
+
+    public static boolean inRange(int x, int y) {
+        return (x > 0 && y > 0);
     }
 
 }
