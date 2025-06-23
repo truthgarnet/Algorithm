@@ -18,6 +18,10 @@ public class Main {
                 turn++; // change direction
                 cnt++;
                 dir = (dir + turn) % 4;        
+            } else if (s[i].equals("L")) {
+                turn--;
+                cnt++;
+                dir = (dir - turn) % 4;
             } else if (s[i].equals("F")) { // move
                 x = x + dx[dir];
                 y = y + dy[dir];
