@@ -26,6 +26,8 @@ public class Main {
                     break;
                 }
             }
+            if (check)
+                break;
         }
         if (!check) {
             System.out.println(-1);
